@@ -1,0 +1,22 @@
+@startuml
+entity "Customer" as customer {
+  +CustomerID [PK] : int
+  Name : string
+  Email : string
+}
+
+entity "Order" as order {
+  +OrderID [PK] : int
+  Date : date
+  CustomerID [FK] : int
+}
+
+entity "Product" as product {
+  +ProductID [PK] : int
+  Name : string
+  Price : float
+}
+
+customer -- order
+order -- product : includes
+@enduml
